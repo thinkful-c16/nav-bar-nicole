@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.hamburger {
+    visibility: hidden;
+    width: 48px;
+    height: 42px;
+    border: 1px solid #eeeeef;
+    border-radius: 2px;
+    box-shadow: 0 0 2px #eeeeef;
+    padding: 10px 10px;
+}
+
+.hamburger-stripe {
+    background-color: #6799ff;
+    height: 3px;
+    margin-bottom: 5px;
+}
+
+svg {
+    order: 1;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+nav {
+    order: 2;
+    margin-top: 10px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    list-style: none;
+    text-transform: uppercase;
+    padding-left: 50px;
+}
+
+nav ul li:first-child {
+    padding-left: 20px;
+}
+
+nav ul li:last-child {
+    margin-left: auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #6799ff;
+}
+
+nav nav ul {
+    display: none;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .container {
+        flex-wrap: wrap;
+    }
+
+    svg {
+        order: 1;
+        width: 75%;
+        margin-left: 5%;
+        margin-top: 5%
+    }
+
+    .hamburger {
+        visibility: visible;
+        order: 2;
+        width: 15%;
+        margin-right: 5%;
+        margin-top: 3%
+    }
+
+    nav {
+        order: 3;
+        width: 100%
+    }
+
+    nav ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        padding: 5% 5% 5% 5%;
+        border-bottom: 1px solid gray;
+    }
+
+    nav ul li:first-child {
+        border-top: 0.5px solid darkslategray;
+    }
+
+    img {
+        display: none;
+    }
+}

@@ -2,18 +2,17 @@
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: nowrap;
 }
 
 .hamburger {
-    visibility: hidden;
     width: 48px;
     height: 42px;
     border: 1px solid #eeeeef;
@@ -28,34 +27,13 @@ body {
     margin-bottom: 5px;
 }
 
-svg {
-    order: 1;
-    margin-top: 20px;
-    margin-left: 40px;
-}
-
-nav {
-    order: 2;
-    margin-top: 10px;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row;
+.mobile-nav {
+    display: none;
 }
 
 nav ul li {
     list-style: none;
     text-transform: uppercase;
-    padding-left: 50px;
-}
-
-nav ul li:first-child {
-    padding-left: 20px;
-}
-
-nav ul li:last-child {
-    margin-left: auto;
 }
 
 nav ul li a {
@@ -63,9 +41,40 @@ nav ul li a {
     color: #6799ff;
 }
 
-nav nav ul {
-    display: none;
+#parent-nav ul {
+    display: flex;
+    direction: row;
+    flex-wrap: wrap;
 }
+
+#course-nav ul, #how-nav ul {
+    background-color: #F9FBFF;
+    display: flex;
+    direction: row;
+    width: 100%;
+}
+
+.child-list-item li {
+    justify-content: center;
+}
+
+.child-list-item a {
+    display: flex;
+    direction: column;
+}
+
+.child-list-item img {
+    width: 74px;
+    height: 74px;
+    order: 1;
+    display: block;
+}
+
+.child-list-item span {
+    order: 2;
+    display: block;
+}
+
 
 @media only screen 
   and (min-device-width: 320px) 
@@ -73,47 +82,49 @@ nav nav ul {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
-    body {
-        flex-wrap: wrap;
-    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }  
 
-    svg {
+    #top-mobile {
+        width: 100%;
+        border-bottom: 1px solid darkslategray;
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        padding-bottom: 10px;
+    }
+ 
+    #main-logo {
         order: 1;
         width: 75%;
         margin-left: 5%;
-        margin-top: 5%
+        margin-top: 5%;
     }
 
-    .hamburger {
+    .mobile-nav {
         visibility: visible;
         order: 2;
         width: 15%;
-        margin-right: 5%;
-        margin-top: 3%
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        order: 3;
-        width: 100%
+        margin-top: 3%;
+        margin-left: 5%;
     }
 
     nav ul {
-        padding: 0;
+        padding: 0px;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
     }
 
-    nav ul li {
+    .parent-list-item {
         margin: 0;
         padding: 5% 5% 5% 5%;
         border-bottom: 1px solid gray;
     }
 
-    nav ul li:first-child {
-        border-top: 0.5px solid darkslategray;
-    }
-
-    img {
+    .child-list-item {
         display: none;
     }
 }
