@@ -1,9 +1,9 @@
-$("#course-link").on('click', function (e) {
-    $('#course-nav').toggleClass("hidden"); 
-    e.preventDefault();
+$(".open-menu").click(function(e) {
+    const sibling = $(e.target).siblings(".dropdown");
+    const isHidden = sibling.hasClass("dropdown-hidden");
+    $(".dropdown").addClass("dropdown-hidden");
+    if (isHidden) {
+        sibling.removeClass("dropdown-hidden")
+    }
 })
 
-$("#how-link").on('click', function (e) {
-    $('#how-nav').toggleClass("hidden"); 
-    e.preventDefault();
-})
