@@ -31,27 +31,62 @@ body {
     display: none;
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+}
+
+.top-mobile {
+    width: 15%;
+}
+
+#main-logo {
+    margin-top: 10px;
+}
+
+#parent-nav {
+    margin-left: 5%;
+    width: 70%
+}
+
 nav ul li {
     list-style: none;
     text-transform: uppercase;
+    display: inline-block;
+    flex-grow: 1;
+}
+
+nav ul li:last-child {
+    flex-grow: 4;
+    text-align: right;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #6799ff;
+    padding-right: 10%;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #parent-nav ul {
     display: flex;
-    direction: row;
+    flex-direction: row;
     flex-wrap: wrap;
+    padding-left: 0px;
+    /* justify-content: space-around; */
 }
 
 #course-nav ul, #how-nav ul {
     background-color: #F9FBFF;
     display: flex;
-    direction: row;
+    flex-direction: row;
     width: 100%;
+    display: none;
 }
 
 .child-list-item li {
@@ -60,7 +95,7 @@ nav ul li a {
 
 .child-list-item a {
     display: flex;
-    direction: column;
+    flex-direction: column;
 }
 
 .child-list-item img {
@@ -85,7 +120,12 @@ nav ul li a {
     .container {
         display: flex;
         flex-direction: column;
+        margin-left: 0;
     }  
+
+    nav ul li a {
+        margin-left: 0;
+    }
 
     #top-mobile {
         width: 100%;
@@ -111,7 +151,7 @@ nav ul li a {
         margin-left: 5%;
     }
 
-    nav ul {
+    #parent-nav ul {
         padding: 0px;
         margin-top: 0px;
         display: flex;
