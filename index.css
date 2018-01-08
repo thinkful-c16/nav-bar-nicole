@@ -78,7 +78,6 @@ nav ul li a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     padding-left: 0px;
-    /* justify-content: space-around; */
 }
 
 #course-nav ul, #how-nav ul {
@@ -86,7 +85,6 @@ nav ul li a:hover {
     display: flex;
     flex-direction: row;
     width: 100%;
-    display: none;
 }
 
 .child-list-item li {
