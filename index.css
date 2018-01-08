@@ -8,6 +8,8 @@ body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
 }
 
 .hamburger {
@@ -26,7 +28,18 @@ body {
     margin-bottom: 5px;
 }
 
+svg {
+    order: 1;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
 nav {
+    order: 2;
+    margin-top: 10px;
+}
+
+nav ul {
     display: flex;
     flex-direction: row;
 }
@@ -34,6 +47,15 @@ nav {
 nav ul li {
     list-style: none;
     text-transform: uppercase;
+    padding-left: 50px;
+}
+
+nav ul li:first-child {
+    padding-left: 20px;
+}
+
+nav ul li:last-child {
+    margin-left: auto;
 }
 
 nav ul li a {
